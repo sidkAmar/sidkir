@@ -1,0 +1,272 @@
+<html>
+    <head>
+        <title>Forza Quattro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.png">
+
+        <style>
+            /* Corpo del titolo */
+            body {
+                background-color: #c9ecff;
+                font-family: 'Trebuchet MS', sans-serif;
+            }
+
+            /* Stile del titolo */
+            .titolo {
+                width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+
+                border: 5px #0c9947 solid;
+                background-color: lightblue;
+                text-align: center;
+            }
+
+            /* Stile testo turno */
+            .turno {
+                font-family: 'Trebuchet MS', sans-serif;
+                font-size: 30px;
+                text-align: center;
+            }
+
+            /* Pulsante "Rigioca" */
+            .pulsante {
+                margin-left: 25%;
+
+                width: 50%;
+                margin-top: 25px;
+
+                display: inline-block;
+                padding: 15px 25px;
+                border: none;
+                border-radius: 5px;
+                outline: 3px #5c0a0a solid;
+
+                font-family: Trebuchet MS;
+                font-size: 20px;
+                cursor: pointer;
+                text-align: center;
+                background-color: #e61919;
+                box-shadow: 5px 5px #595959;
+            }
+
+            .pulsante:hover {background-color: #999999}
+
+            .pulsante:active {
+                background-color: #737373;
+                box-shadow: 0 5px #5d7a63;
+                transform: translateY(4px);
+            }
+
+            /* Riga del pulsante*/
+            .btn-container {
+                margin-left: auto;
+                margin-right: auto;
+
+                padding: 5px;
+                background-color: #2196f3;
+            }
+
+            /* Tabella di gioco */
+            .col-container {
+                width: 550px;
+                margin-left: auto;
+                margin-right: auto;
+
+                margin-top: 25px;
+                border: 5px blue solid;
+            }
+
+            /* Riga della tabella */
+            .row-container {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto;
+                gap: auto;
+                background-color: #2196f3;
+                padding: 10px;
+            }
+
+            /* Stile di span per ogni riga della tabella */
+            .row-container > span {
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 100%;
+                width: 85%;
+                height: 30%;
+                padding-top: 100%;
+
+                text-align: center;
+                padding: 25px 0;
+                font-size: 30px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="titolo">
+            <h2 style="font-family: 'Trebuchet MS', sans-serif; font-size: 30px"><b>Forza Quattro!</b></h2>
+            <p style="font-family: 'Trebuchet MS', sans-serif;">Creato da Amar e Damiano</p>
+        </div>
+
+        <div class="col-container">
+            <div class="row-container"></div>
+            <div class="row-container">
+                <span id="10" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="11" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="12" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="13" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="14" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="15" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="16" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="row-container">
+                <span id="20" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="21" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="22" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="23" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="24" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="25" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="26" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="row-container">
+                <span id="30" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="31" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="32" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="33" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="34" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="35" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="36" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="row-container">
+                <span id="40" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="41" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="42" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="43" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="44" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="45" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="46" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="row-container">
+                <span id="50" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="51" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="52" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="53" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="54" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="55" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="56" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="row-container">
+                <span id="60" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="61" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="62" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="63" style="background-color: #bdfff3;" onclick="onClick(id)"></span>  
+                <span id="64" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="65" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+                <span id="66" style="background-color: #bdfff3;" onclick="onClick(id)"></span>
+            </div>
+            <div class="btn-container">
+                <button id="pul" class="pulsante" onClick="window.location.reload();">Reinizia partita!</button>
+            </div>
+            <div class="btn-container">
+                <h2 id="turn" class="turno"></h2>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        /* Variabili di gioco */
+        let turn = 1;
+        let isRedTurn = true;
+        const defColor = '#bdfff3';
+        const redColor = '#e61919';
+        const yelColor = '#e6c419';
+
+        /* Input del nome dei due giocatori */
+        let player1 = prompt("Inserire il nome qui:", "Giocatore 1");
+
+        while (player1 == null || player1 == "") {
+            player1 = prompt("Input non valido, reinserire il nome:", "Giocatore 1");
+        }
+        document.getElementById("turn").innerHTML = "Primo turno di " + player1 + "!";
+
+        let player2 = prompt("Inserire il nome qui:", "Giocatore 2");
+
+        while (player2 == null || player2 == "") {
+            player2 = prompt("Input non valido, reinserire il nome:", "Giocatore 2");
+        }
+
+
+
+        /* Converte un valore da RGB a Hex - Preso da internet */
+        const rgb2hex = (rgb) => `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`
+
+        /* Controlla se la casella NON e stata cliccata, in caso procede con checkCol... */
+        function onClick(imageId) {
+            let currColor = rgb2hex(document.getElementById(imageId).style.backgroundColor);
+
+            if (currColor === defColor) {
+                turn++;
+
+                if (imageId >= 60) {
+                    setColor(imageId);
+                } else {
+                    checkCol(imageId);
+                }
+            }
+        }
+
+        /* Colora la casella libera piu bassa */
+        function checkCol(imageId) {
+            let id = Number(imageId) + 10;
+            let currColor = rgb2hex(document.getElementById(id).style.backgroundColor);
+
+            console.log("Sono alla patella " + imageId + " di colore " + rgb2hex(document.getElementById(imageId).style.backgroundColor));
+
+            while (currColor === defColor && id < 60) {
+                id += 10;
+                currColor = rgb2hex(document.getElementById(id).style.backgroundColor);
+            }
+
+            /* Caso per la casella piu a fondo */
+            if (currColor === defColor) {
+                setColor(id);
+            } else {
+                setColor(id - 10);
+            }
+        }
+
+        /* Cambia il colore ad ogni turno dei vari elementi HTML */
+        function setColor(imageId) {
+            if (isRedTurn) {
+                isRedTurn = false;
+
+                document.getElementById("pul").style.backgroundColor = yelColor;
+                document.getElementById(imageId).style.backgroundColor = redColor;
+
+                document.getElementById("turn").innerHTML = "Turno #" + turn + " di " + player2 + "!";
+                console.log("Patella " + imageId + " ora di colore rosso (" + redColor + ")");
+            } else {
+                isRedTurn = true;
+
+                document.getElementById("pul").style.backgroundColor = redColor;
+                document.getElementById(imageId).style.backgroundColor = yelColor;
+
+                document.getElementById("turn").innerHTML = "Turno #" + turn + " di " + player1 + "!";
+                console.log("Patella " + imageId + " ora di colore giallo (" + yelColor + ")");
+            }
+
+            /* Se la griglia è piena, quindi pareggio... */
+            if (turn === 43) {
+                document.getElementById("pul").style.backgroundColor = "#b5b5b5";
+
+                document.getElementById("turn").innerHTML = "Pareggio! Nessun vincitore";
+                console.log("Pareggio!");
+            }
+        }
+
+    </script>
+
+</html>

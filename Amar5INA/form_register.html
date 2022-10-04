@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form - Amar S.</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+
+        <!╌ Importazione del CSS di Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+        <!╌ Importazione del JS di Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+        <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css” />
+
+    </head>
+
+    <body style="background-color: #7bb8b8">
+
+        <!-- Carica il navbar ad ogni sito -->
+        <script>
+            fetch('navbar.html')
+                    .then(data => data.text())
+                    .then(html => document.getElementById('ph-navbar').innerHTML = html);
+        </script>
+
+        <div id="ph-navbar"></div>
+
+        <div class="mx-auto p-5 border border-light border-5 rounded-4" style="width: 500px; margin-top: 50px; background-color: #0d4964" action="/action_page.php" method="POST">
+            <form>
+                <div>
+                    <label for="nome" class="form-label text-light">Nome:</label>
+                    <input oninput="updateEmail()" type="text" class="form-control" title="2-20 caratteri alfabetici" placeholder="Amar" id="nome" name="nome" pattern="^[a-zA-Z]{2,20}$" required>
+                </div>
+
+                <div class="pt-3">
+                    <label for="cognome" class="form-label text-light">Cognome:</label>
+                    <input oninput="updateEmail()" type="text" class="form-control" title="2-20 caratteri alfabetici" placeholder="Sidkir" id="cognome" name="cognome" pattern="^[a-zA-Z]{2,20}$" required>
+                </div>
+
+                <div class="pt-3">
+                    <label for="mail" class="form-label text-light">Indirizzo mail Buonarroti:</label>
+                    <div class="input-group">
+                        <input class="form-control" type="text" value="nome.cognome" aria-label="nome.cognome" id="email" name="emailAddress" style="background-color: #b8dbff" disabled readonly>
+                        <span class="input-group-text" id="emailAddress" style="background-color: #88c7ff">@buonarroti.tn.it</span>
+                    </div>
+                </div>
+
+                <div class="pt-3">
+                    <label for="mail" class="form-label text-light">Indirizzo scolastico:</label>
+                    <div class="input-group mb-2">
+
+                        <div class="form-floating" id="divAnno">
+                            <select onchange="updateIndirizzo()" class="form-select" id="annoScuola" name="annoScuola" aria-label="Anno" required>
+                                <option value="1">1°</option>
+                                <option value="2">2°</option>
+                                <option value="3">3°</option>
+                                <option value="4">4°</option>
+                                <option value="5" selected>5°</option>
+                            </select>
+                            <label for="annoScuola">Anno</label>
+                        </div>
+
+                        <div class="form-floating" id="divIndirizzo">
+                            <select class="form-select" id="indirizzoScuola" name="indirizzoScuola" aria-label="Indirizzo" required>
+                                <optgroup label="Biennio" id="Biennio" disabled>
+                                    <option value="A">Biennio Comune</option>
+                                    <option value="B">Digital Science</option>
+                                </optgroup>
+                                <optgroup label="Triennio" id="Triennio">
+                                    <option value="1">CAT</option>
+                                    <option value="2">Chimica</option>
+                                    <option value="3">Elettronica</option>
+                                    <option value="4" selected>Informatica</option>
+                                    <option value="5">Meccanica</option>
+                                </optgroup>
+                            </select>
+                            <label for="indirizzoScuola">Indirizzo</label>
+                        </div>
+
+                        <div class="form-floating">
+                            <input type="text" style="text-transform: uppercase" class="form-control" id="sezioneScuola" name="sezioneScuola" title="Singola lettera alfabetica" placeholder="Sezione" pattern="^[a-zA-Z]$" maxlength="1" required>
+                            <label for="sezioneScuola">Sezione</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <label for="password" class="form-label text-light">Inserisci una password:</label>
+                    <div class="input-group-append">
+                        <span class="input-group-text" onclick="togglePassword();">
+                            <i class="fas fa-eye" id="show_eye" style="display: block;"></i>
+                            <i class="fas fa-eye-slash" id="hide_eye" style="display: none;"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <label for="datanascita" class="form-label text-light">Data di nascita:</label>
+                    <input type="date" class="form-control" id="datanascita" name="datanascita" required>
+                </div>
+
+                <div class="pt-3">
+                    <label for="regione" class="form-label text-light">Regione di nascita:</label>
+                    <select class="form-select" id="regione" name="regione" required>
+                        <option>Abruzzo</option>
+                        <option>Basilicata</option>
+                        <option>Calabria</option>
+                        <option>Campania</option>
+                        <option>Emilia-Romagna</option>
+                        <option>Friuli Venezia Giulia</option>
+                        <option>Lazio</option>
+                        <option>Liguria</option>
+                        <option>Lombardia</option>
+                        <option>Marche</option>
+                        <option>Molise</option>
+                        <option>Piemonte</option>
+                        <option>Puglia</option>
+                        <option>Sardegna</option>
+                        <option>Sicilia</option>
+                        <option>Toscana</option>
+                        <option selected>Trentino-Alto Adige</option>
+                        <option>Umbria</option>
+                        <option>Valle d'Aosta</option>
+                        <option>Veneto</option>
+                    </select>
+                </div>
+
+                <div class="pt-3">
+                    <label for="citta" class="form-label text-light">Città di nascita:</label>
+                    <input type="text" class="form-control" id="citta" placeholder="Trento" value="Trento" required>
+                </div>
+
+                <div class="pt-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label text-light" for="invalidCheck">
+                            Ho controllato che i dati sopra inseriti siano corretti
+                        </label>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button class="btn btn-info btn-lg col-4" type="submit">Registrati!</button>
+                </div>
+
+                <div class="accordion pt-4" id="accordionInfo">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="accedere">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>Già registrato?</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="accedere" data-bs-parent="#accordionInfo">
+                            <div class="accordion-body">
+                                Per accedere visita <a href="form_login.html"><strong>la pagina dedicata</strong></a> inserendo la tua email e password
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="pb-5"></div>
+
+        <script>
+            function updateEmail() {
+                let nome = document.getElementById("nome").value;
+                let cognome = document.getElementById("cognome").value;
+
+                let email = nome + "." + cognome;
+
+                document.getElementById("email").value = email.toLowerCase();
+            }
+
+            function updateIndirizzo() {
+                let anno = document.getElementById("annoScuola").value;
+                console.log(anno);
+
+                if (anno <= 2) {
+                    document.getElementById("Biennio").removeAttribute("disabled");
+                    document.getElementById("Triennio").setAttribute("disabled", "disabled");
+
+                    document.getElementById("indirizzoScuola").value = "A";
+                } else {
+                    document.getElementById("Biennio").setAttribute("disabled", "disabled");
+                    document.getElementById("Triennio").removeAttribute("disabled");
+
+                    document.getElementById("indirizzoScuola").value = "1";
+                }
+            }
+
+            function togglePassword() {
+                var password = document.getElementById("password");
+                if (password.type === "password") {
+                    password.type = "text";
+                } else {
+                    password.type = "password";
+                }
+            }
+        </script>
+
+    </body>
+</html>
